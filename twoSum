@@ -1,0 +1,14 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+const twoSum = (n, t) => {
+    const comp = {};
+    for(let i=0; i<n.length; i++){
+        if(comp[n[i] ]>=0){
+            return [ comp[n[i] ] , i]
+        }
+        comp[t-n[i]] = i
+    }
+};
