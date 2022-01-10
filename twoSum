@@ -12,3 +12,17 @@ const twoSum = (n, t) => {
         comp[t-n[i]] = i
     }
 };
+
+// more faster...
+var twoSum = function(nums, target) {
+  let myMap = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    let current = nums[i];
+    let newTarget = target - current;
+    if (myMap.has(current)) return [myMap.get(current), i];
+    else myMap.set(newTarget, i);
+  }
+
+  return false;
+};
